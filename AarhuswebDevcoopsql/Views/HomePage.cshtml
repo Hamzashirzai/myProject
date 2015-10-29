@@ -1,0 +1,63 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage 
+@{
+    Layout = "Master.cshtml";
+}
+
+	@Umbraco.Field("siteTitle")
+	@Umbraco.Field("maincontent")
+		<hr />
+	@Umbraco.Field("footer")
+
+<div class="articlenode">
+    <ul class="customnav">
+        <li><a href="https://umbraco.tv/">Umbraco.Tv tutorial link</a></li>
+        <li><a href="#">Documentation of umbraco </a></li>
+
+    </ul>
+    <ul class="customnav">
+        <li><a href="https://umbraco.tv/">Umbraco.Tv tutorial link</a></li>
+        <li><a href="#">Documentation of umbraco </a></li>
+
+    </ul>
+    <ul class="customnav">
+        <li><a href="https://umbraco.tv/">Umbraco.Tv tutorial link</a></li>
+        <li><a href="#">Documentation of umbraco </a></li>
+
+    </ul>
+    <ul class="customnav">
+        <li><a href="https://umbraco.tv/">Umbraco.Tv tutorial link</a></li>
+        <li><a href="#">Documentation of umbraco </a></li>
+
+    </ul>
+    <ul class="customnav">
+        <li><a href="https://umbraco.tv/">Some useful link</a></li>
+        <li><a href="#">some demo link for  </a></li>
+
+    </ul>
+    @{
+    var page = Umbraco.Content(1064);
+    }
+
+    <h3>@page.intro</h3>
+
+    @foreach (var child in page.Children) {
+    
+        
+            <ul>
+
+                <li><a href="@child.Url">@child.Name</a></li>
+            </ul>
+            
+        
+    
+    }
+    
+</div>
+	<div class="row">
+        <nav role="navigation" class="navbar navbar-default navbar-fixed-bottom">
+            <div class="col-lg-12">
+                @Umbraco.RenderMacro("listArticles")
+                
+            </div>
+            </nav>
+</div>
